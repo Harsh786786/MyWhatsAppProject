@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "782529472859",
+    "project_id": "mywhatsapp-e15ab",
+    "storage_bucket": "mywhatsapp-e15ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:782529472859:android:0bcc76538dbb7e80e2127e",
+        "android_client_info": {
+          "package_name": "com.harsh.mywhatsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "782529472859-3ucp7c8lbfjm4on6sd3eou94t5c3evbn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDumSHEUft7_VB2RHWl8NpCH4UfJrVfKC8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "782529472859-3ucp7c8lbfjm4on6sd3eou94t5c3evbn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
