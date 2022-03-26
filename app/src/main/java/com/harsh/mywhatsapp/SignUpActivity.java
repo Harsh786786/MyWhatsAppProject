@@ -23,7 +23,7 @@ public class SignUpActivity extends AppCompatActivity {
     ActivitySignUpBinding binding; /// --- ActivitySignUp is the name of current activity
     private FirebaseAuth auth;
     FirebaseDatabase database;
-    ProgressDialog progressDialog;
+    ProgressDialog progressDialog; // used for buffering effect
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
