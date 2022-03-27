@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -31,26 +32,30 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         getSupportActionBar().hide();
+
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
         progressDialog = new ProgressDialog(SignUpActivity.this);
-        //////////////////////////////////////////////////////////////////
         progressDialog.setTitle("Creating Account");
         progressDialog.setMessage("We are creating your account");
-        //////////////////////////////////////////////////////////////////////
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
         binding.btnSingUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 progressDialog.show(); ////----- show dialog
-                auth.createUserWithEmailAndPassword(binding.etEmail.getText().toString(),binding.etPassword.getText().toString()).
+                auth.createUserWithEmailAndPassword
+                        (binding.etEmail.getText().toString(),binding.etPassword.getText().toString()).
                         addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressDialog.dismiss();
                         if(task.isSuccessful()){
-                            Users user = new Users(binding.etUserName.getText().toString(),binding.etEmail.getText().toString(),
+                            Users user = new Users
+                                    (binding.etUserName.getText().toString(),binding.etEmail.getText().toString(),
                                     binding.etPassword.getText().toString());
 
                             String id = task.getResult().getUser().getUid(); // we need id Step 16
@@ -65,6 +70,15 @@ public class SignUpActivity extends AppCompatActivity {
                 });
             }
         });
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
+        binding.tvAlreadyAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+                startActivity(intent);
+            }
+        });
+////////////////////////////////////////////////////////////////////////////////////////////////////
     }
+
 }
